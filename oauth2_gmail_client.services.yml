@@ -1,0 +1,5 @@
+services:
+
+  oauth2_gmail_client.gmail_service:
+    class: Drupal\oauth2_gmail_client\Service\GmailProviderService
+    arguments: ['@config.factory', '@request_stack', '@state']
