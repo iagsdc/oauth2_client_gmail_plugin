@@ -5,6 +5,10 @@ IMPORTANT:  This module requires the Google league/oauth2-google module, availab
 https://oauth2-client.thephpleague.com/providers/league/.  It should be installed in
 your vendor directory.
 
+To install this module, place it in the /oauth2_client/modules directory.  If this
+is the first or only plugin installed for oauth2_client, you will have to create
+the 'modules' directory.
+
 Before using this module, it is necessary to set up a Client ID and Client Secret
 on Google.  Here is how to do that as of April, 2024, and configure this module:
 
