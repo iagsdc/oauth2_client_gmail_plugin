@@ -42,7 +42,16 @@ on Google.  Here is how to do that as of April, 2024, and configure this module:
 
 11. In Drupal, go to Configuration->System->OAuth2 Clients (/admin/config/system/oauth2-client).
     You should see this plugin (PHPMailer Gmail Oauth2).  Enable it, then press Edit.  Enter your
-    Client ID, and Client Secret and then press 'Save'. 
+    Client ID and Client Secret in the boxes indicated, and enter your email address in the 
+    Description field.  Press 'Save'. 
+
+    IMPORTANT:  Google oauth2 needs your email address to authenticate, but at this writing 
+    there is no field to gather your email address when entering your Client ID and Client 
+    Secret in the OAuth2 Client.  There is, however, a description field, so that has been 
+    repurposed for this plugin to store your email address.  Enter only your Google email 
+    address in the Description field (e.g. jill@biz.com), and nothing else (no actual description).
+
+    Check back occasionally to see if a better solution is found for storing email address.
 
 12. After you've saved your Google credentials, press the 'Save and request token' button
     to redirect from your site to Google, then follow the instructions on Google.  

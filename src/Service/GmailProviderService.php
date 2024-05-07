@@ -95,7 +95,7 @@ class GmailProviderService {
 
         return [
             'provider'     => $this->getProvider(),
-            'userName'     => 'support@iagsdc.org',
+            'userName'     => trim($config->get('description')),
             'clientId'     => (array_key_exists('client_id',     $credentials) ? $credentials['client_id']     : ''),
             'clientSecret' => (array_key_exists('client_secret', $credentials) ? $credentials['client_secret'] : ''),
             'refreshToken' => ($accessToken ? $accessToken->getRefreshToken() : ''),
