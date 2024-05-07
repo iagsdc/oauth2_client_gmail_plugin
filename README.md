@@ -1,3 +1,9 @@
+ATTENTION:  If you did an early download right after the initial commit of this repository,
+chances are you downloaded code with a hard-coded email address that will cause email to
+fail when PHPMailer tries to authenticate and send. This has been fixed with a hopefully 
+temporary workaround using Description to collect the email address (see 11 below). If
+you're experiencing an issue, try downloading a fresh copy.
+
 This module is a plugin for the OAuth2 Client module, and also requires the PHPMailer SMTP 
 module. It provides authentication to Google Workspace Gmail via OAuth2.  
 
@@ -49,7 +55,7 @@ on Google.  Here is how to do that as of April, 2024, and configure this module:
     there is no field to gather your email address when entering your Client ID and Client 
     Secret in the OAuth2 Client.  There is, however, a description field, so that has been 
     repurposed for this plugin to store your email address.  Enter only your Google email 
-    address in the Description field (e.g. jill@biz.com), and nothing else (no actual description).
+    address in the Description field (e.g. jane@biz.com), and nothing else (no actual description).
 
     Check back occasionally to see if a better solution is found for storing email address.
 
