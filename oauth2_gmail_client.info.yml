@@ -5,6 +5,7 @@ package: Oauth2 Client
 core_version_requirement: ^9.4 || ^10
 dependencies:
   - oauth2_client:oauth2_client
+  - phpmailer_smtp:phpmailer_smtp
 
 # Information added by Drupal.org packaging script on 2023-08-07
 version: '1.0.0-alpha1'
