@@ -11,8 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Gmail OAuth2 plugin
  *
  * @PhpmailerOauth2(
- *   id = "gmail_oauth2",
- *   name = @Translation("Gmail OAuth2"),
+ *   id = "gmail_oauth2_client",
+ *   name = @Translation("Gmail OAuth2 Client"),
  * )
  */
 class GmailOauth2 extends PhpmailerOauth2PluginBase implements ContainerFactoryPluginInterface {

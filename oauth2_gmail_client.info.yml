@@ -1,6 +1,6 @@
-name: Oauth2 Gmail Client
+name: Gmail OAuth2 Client
 type: module
-description: Oauth2Client plugins for Google Workspace Gmail
+description: Oauth2 Client plugin for Google Workspace Gmail
 package: Oauth2 Client
 core_version_requirement: ^9.4 || ^10
 dependencies:
