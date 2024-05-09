@@ -1,8 +1,6 @@
-ATTENTION:  If you did an early download right after the initial commit of this repository,
-chances are you downloaded code with a hard-coded email address that will cause email to
-fail when PHPMailer tries to authenticate and send. This has been fixed with a hopefully 
-temporary workaround using Description to collect the email address (see 11 below). If
-you're experiencing an issue, try downloading a fresh copy.
+NOTE:  earlier versions of this code had issues regarding the email address used to
+sign in to Google and to send email from Drupal.  That issue has been resolved; the
+address used is the Email address entered on the 'Basic site settings' page.
 
 This module is a plugin for the OAuth2 Client module, and also requires the PHPMailer SMTP 
 module. It provides authentication to Google Workspace Gmail via OAuth2.  
@@ -12,13 +10,15 @@ https://oauth2-client.thephpleague.com/providers/league/.  It should be installe
 your vendor directory.
 
 To install this module, place it in the /oauth2_client/modules directory.  If this
-is the first or only plugin installed for oauth2_client, you will have to create
+is the first or only plugin installed for oauth2_client, you may have to create
 the 'modules' directory.
 
 Before using this module, it is necessary to set up a Client ID and Client Secret
 on Google.  Here is how to do that as of April, 2024, and configure this module:
 
-1.  Sign in to your Google Workspace account.
+1.  Sign in to your Google Workspace account.  The username of the Google account must 
+    be your site email address, entered in Drupal on the 'Basic site settings' page
+    (/admin/config/system/site-information).
 
 2.  Go to https://console.cloud.google.com/.
 
@@ -48,32 +48,28 @@ on Google.  Here is how to do that as of April, 2024, and configure this module:
 
 11. In Drupal, go to Configuration->System->OAuth2 Clients (/admin/config/system/oauth2-client).
     You should see this plugin (PHPMailer Gmail Oauth2).  Enable it, then press Edit.  Enter your
-    Client ID and Client Secret in the boxes indicated, and enter your email address in the 
-    Description field.  Press 'Save'. 
-
-    IMPORTANT:  Google oauth2 needs your email address to authenticate, but at this writing 
-    there is no field to gather your email address when entering your Client ID and Client 
-    Secret in the OAuth2 Client.  There is, however, a description field, so that has been 
-    repurposed for this plugin to store your email address.  Enter only your Google email 
-    address in the Description field (e.g. jane@biz.com), and nothing else (no actual description).
-
-    Check back occasionally to see if a better solution is found for storing email address.
+    Client ID and Client Secret in the boxes indicated.  Press 'Save'. 
 
 12. After you've saved your Google credentials, press the 'Save and request token' button
-    to redirect from your site to Google, then follow the instructions on Google.  
+    to redirect from your site to Google, then follow the instructions on Google. When you
+    log in to Google, you need to log into the account that has your Drupal site email address
+    for its username.  
+
     When you're done, Google should issue a Refresh Token and redirect back to the Drupal page you 
-    just left.  If everything worked, you will have your Refresh Token and are ready to send email.
+    just left.  If everything worked, the token will be saved and you should be ready to send email.
 
 A few other setup items:
 
-1.  Don't forget to go to the Mail module to select 'PHPMailer SMTP' as your mail Formatter and Sender
-    (/admin/config/system/mailsystem).
+1.  Don't forget to go to the Mail module to select 'PHPMailer SMTP' as your mail Formatter and 
+    Sender (/admin/config/system/mailsystem).
 
 2.  If you have other modules such as Commerce 2 that send mail, you may need to add them at the 
     bottom of the same page in (1) above.
 
-3.  On the PHPMailer SMTP transport settings page, select 'Gmail OAuth2' as your SMTP authentication method
-    (/admin/config/system/phpmailer-smtp).  Set the SMTP port to 587, and select TLS as the secure protocol.
+3.  On the PHPMailer SMTP transport settings page, select 'Gmail OAuth2 Client' as your SMTP 
+    authentication type (/admin/config/system/phpmailer-smtp).  Set the SMTP port to 587, and 
+    select TLS as the secure protocol.  Under Advanced SMTP setting, uncheck Verify peer and
+    Verify peer name.
 
 You can use the 'Test configuration' service on the PHPMailer SMTP transport settings page to verify that
 the new configuration is working by sending a test email.
