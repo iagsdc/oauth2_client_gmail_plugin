@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_update_projects_alter()
+ */
+function oauth2_gmail_client_update_projects_alter(&$projects) {
+
+    // if you want to see oauth2_gmail_client in the update status report,
+    // you can safely delete this function, or delete this entire file.
+
+    // remove the oauth2_gmail_client module from the update status report.
+    unset($projects['oauth2_gmail_client']);
+}
+
+/**
+ * implements hook_help()
+ */
+function oauth2_gmail_client_help(string $route_name, RouteMatchInterface $route_match): ?array {
+
+    $build = [];
+    if($route_name === 'help.page.oauth2_gmail_client') {
+        $readme_content = file_get_contents(__DIR__ . '/README.md');
+        $build = [
+            '#type' => 'html_tag',
+            '#tag' => 'pre',
+            '#value' => $readme_content,
+        ];
+    }
+    return $build;
+}
