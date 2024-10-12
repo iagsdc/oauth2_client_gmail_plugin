@@ -6,8 +6,7 @@
         "php": ">=8.3",
         "drupal/core": "^10.0",
         "drupal/phpmailer_smtp": "^2.2.5",
-        "league/oauth2-client": "^2.0",
-        "league/oauth2-google": "^2.0"
+        "league/oauth2-google": "^4.0"
     },
     "license": "GPL-3.0-or-later",
     "authors": [
@@ -21,5 +20,11 @@
         "source": "https://github.com/iagsdc/oauth2_client_gmail_plugin"
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "keywords": [
+        "Drupal 10",
+        "OAuth2",
+        "Gmail",
+        "plugin"
+    ]
 }
