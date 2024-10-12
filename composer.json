@@ -5,14 +5,15 @@
     "require": {
         "php": ">=8.3",
         "drupal/core": "^10.0",
+        "drupal/phpmailer_smtp": "^2.2.5",
         "league/oauth2-client": "^2.0",
         "league/oauth2-google": "^2.0"
     },
-    "license": "GPL-3.0-or-later",  // Change this to the appropriate license if needed
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "iagsdc",
-            "email": "iagsdc@github.com"
+            "email": "support@iagsdc.org"
         }
     ],
     "support": {
