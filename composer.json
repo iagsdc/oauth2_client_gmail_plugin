@@ -1,0 +1,24 @@
+{
+    "name": "drupal/oauth2_client_gmail_plugin",
+    "description": "A Gmail plugin for the OAuth2 client.",
+    "type": "drupal-module",
+    "require": {
+        "php": ">=8.3",
+        "drupal/core": "^10.0",
+        "league/oauth2-client": "^2.0",
+        "league/oauth2-google": "^2.0"
+    },
+    "license": "GPL-3.0-or-later",  // Change this to the appropriate license if needed
+    "authors": [
+        {
+            "name": "iagsdc",
+            "email": "iagsdc@github.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/iagsdc/oauth2_client_gmail_plugin/issues",
+        "source": "https://github.com/iagsdc/oauth2_client_gmail_plugin"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
